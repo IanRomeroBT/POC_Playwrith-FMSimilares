@@ -2,9 +2,12 @@
   "name": "similares-playwright-poc",
   "version": "1.0.0",
   "private": true,
-  "engines": { "node": ">=20" },
+  "engines": {
+    "node": ">=20"
+  },
   "description": "POC modular Playwright con estilo Katalon",
   "scripts": {
+    "ambiente": "node Framework/Scripts/profile.cjs",
     "test": "playwright test --project=e2e --project=framework",
     "test:e2e": "playwright test --project=e2e",
     "test:smoke": "playwright test --project=smoke",
@@ -13,9 +16,27 @@
     "test:framework": "playwright test --project=framework",
     "test:headed": "playwright test --project=e2e --headed",
     "test:ui": "playwright test --project=e2e --ui",
-    "report": "playwright show-report Reportes/html",
+    "report": "playwright show-report Workspace/Reportes/html",
     "typecheck": "tsc --noEmit",
-    "install:browsers": "playwright install chromium"
+    "install:browsers": "playwright install chromium",
+    "bdd:gen": "bddgen --config playwright.bdd.config.ts",
+    "test:bdd": "bddgen --config playwright.bdd.config.ts && playwright test --config playwright.bdd.config.ts --project=e2e",
+    "test:bdd:smoke": "bddgen --config playwright.bdd.config.ts && playwright test --config playwright.bdd.config.ts --project=smoke",
+    "test:bdd:regression": "bddgen --config playwright.bdd.config.ts && playwright test --config playwright.bdd.config.ts --project=regression",
+    "test:bdd:checkout": "bddgen --config playwright.bdd.config.ts && playwright test --config playwright.bdd.config.ts --project=checkout",
+    "test:bdd:headed": "bddgen --config playwright.bdd.config.ts && playwright test --config playwright.bdd.config.ts --project=e2e --headed",
+    "test:bdd:ui": "bddgen --config playwright.bdd.config.ts && playwright test --config playwright.bdd.config.ts --project=e2e --ui",
+    "allure:generate": "allure generate --clean",
+    "allure:open": "allure open --host 127.0.0.1",
+    "report:allure": "allure open --host 127.0.0.1"
   },
-  "devDependencies": {"@playwright/test": "^1.64.1", "typescript": "^5.9.3", "@types/node": "^24.0.0", "dotenv": "^17.0.0"}
+  "devDependencies": {
+    "@playwright/test": "^1.64.1",
+    "@types/node": "^24.0.0",
+    "allure": "^3.22.1",
+    "allure-playwright": "^3.14.0",
+    "dotenv": "^17.0.0",
+    "playwright-bdd": "^9.2.1",
+    "typescript": "^5.9.3"
+  }
 }

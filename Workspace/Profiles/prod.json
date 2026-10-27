@@ -1,0 +1,5 @@
+{
+  "descripcion": "Tienda actual de producción",
+  "baseURL": "https://www.farmaciasdesimilares.com",
+  "envFile": ".env.prod"
+}

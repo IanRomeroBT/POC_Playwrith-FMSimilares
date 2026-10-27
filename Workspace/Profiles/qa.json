@@ -1,0 +1,5 @@
+{
+  "descripcion": "Ejemplo de QA: reemplazar por la URL real del ambiente",
+  "baseURL": "https://qa.farmacias-simuladas.invalid",
+  "envFile": ".env.qa"
+}

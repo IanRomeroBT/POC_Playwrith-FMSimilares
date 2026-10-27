@@ -1,6 +1,9 @@
 node_modules/
 .env
-Reportes/*
-!Reportes/.gitkeep
+.env.*
+Workspace/Reportes/*
+!Workspace/Reportes/.gitkeep
 playwright/.auth/
 *.tsbuildinfo
+.features-gen/
+Framework/Generated/
